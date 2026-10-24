@@ -6,9 +6,16 @@ namespace ActividadTDDApp
 {
     public class Funciones
     {
+        /// <summary>Devuelve n! o -1 si n es negativo.</summary>
         public static long CalcularFactorial(int n)
         {
-            throw new NotImplementedException();
+            if (n < 0) return -1;
+
+            long resultado = 1;
+            for (int i = 2; i <= n; i++)
+                resultado *= i;
+
+            return resultado;
         }
 
         public static bool EsContrasenyaValida(string contrasenya)
