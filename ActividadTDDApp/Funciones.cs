@@ -18,13 +18,15 @@ namespace ActividadTDDApp
             return resultado;
         }
 
+        private const int LongitudMinima = 8;
+        private const char CaracterObligatorio = '#';
+
+        /// <summary>Válida si no es null/vacía, tiene 8+ caracteres y contiene '#'.</summary>
         public static bool EsContrasenyaValida(string contrasenya)
         {
-            if (contrasenya == null) return false;
-            if (contrasenya == "") return false;
-            if (contrasenya.Length < 8) return false;
-            if (!contrasenya.Contains("#")) return false;
-            return true;
+            return !string.IsNullOrEmpty(contrasenya)
+                && contrasenya.Length >= LongitudMinima
+                && contrasenya.Contains(CaracterObligatorio);
         }
     }
 }
